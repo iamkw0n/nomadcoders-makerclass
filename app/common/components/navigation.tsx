@@ -117,7 +117,7 @@ const menus = [
                 name: "Create a Team",
                 description: "Create a team in our community",
                 to: "/teams/create",
-            }
+            },
         ]
     }
 ];
@@ -143,10 +143,10 @@ export default function Navigation() {
                                             {menu.items?.map((item) => (
                                                 <NavigationMenuItem key={item.name} className={cn([
                                                     "select-none rounded-md transition-colors hover:bg-accent hover:text-accent-foreground",
-                                                    item.to === "/products/promote" && "col-span-2 bg-primary/10 hover:bg-primary/20 focus:bg-primary/20",
-                                                    item.to === "/jobs/submit" && "col-span-2 bg-primary/10 hover:bg-primary/20 focus:bg-primary/20",
+                                                    item.to === "/products/promote" || item.to === "/jobs/submit"
+                                                    && "col-span-2 bg-primary/10 hover:bg-primary/20 focus:bg-primary/20",
                                     ])}>
-                                        <NavigationMenuLink asChild>
+                                        <NavigationMenuLink>
                                             <Link
                                             className="p-3 space-t-1 block leading-none no-underline outline-none"
                                             to={item.to}>
